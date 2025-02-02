@@ -199,7 +199,7 @@ void Chip8::SetI(int16_t nnn) {
 // op: 3XNN 4XNN
 void Chip8::SkipConditionX(uint8_t x, uint8_t nn, bool expected) {
 	uint8_t vx = _vars[x];
-	if ((vx == nn) == expected) // CHECK: does unsigned type matter? is gV supposed to be uint? are we comparing value or bits?
+	if ((vx == nn) == expected)
 	{
 		_pc += 2;
 	}
@@ -373,14 +373,6 @@ void Chip8::LoadMemory(uint8_t x) {
 	if (COSMAC_VIP_MEMORY_BEHAVIOUR) {
 		_I = _I + x + 1;
 	}
-}
-
-void Test1(uint16_t ins) {
-	// t1;
-}
-
-void Test2(uint16_t ins) {
-	// t2;
 }
 
 // Execution
